@@ -53,17 +53,20 @@ handler.on('handle')
     .get('/hello-world', (req, res) => {
         // return res.ok('hello-world');
         
-        return res.ok({
-              statusCode: 200,
-              // body: JSON.stringify({
-              //   message: test(html),
-              //   // input: req,
-              // }),
-              headers: {
-                'Content-Type': 'text/html'
-              },
-              body: getFormattedContent(context)
-            });
+        return res.ok(
+          // {
+          //     statusCode: 200,
+          //     // body: JSON.stringify({
+          //     //   message: test(html),
+          //     //   // input: req,
+          //     // }),
+          //     headers: {
+          //       'Content-Type': 'text/html'
+          //     },
+          //     body: getFormattedContent(context)
+          //   }
+            getFormattedContent(context)
+            );
     });
 
     handler.on('handle2')
